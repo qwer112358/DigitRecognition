@@ -20,13 +20,11 @@ def predict_digit(image_path):
 
 
 def process_images_in_folder(folder_path):
-    image_count = 0
     digit_count = [0] * 10
     for filename in os.listdir(folder_path):
         if filename.endswith('.jpg'):
             predicted_digit = predict_digit(os.path.join(folder_path, filename))
             digit_count[predicted_digit] += 1
-            image_count += 1
     return digit_count
 
 
